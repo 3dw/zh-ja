@@ -35,7 +35,11 @@
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <router-view 
+      :phonics_a="phonics_a"
+      :phonics_song="phonics_song"
+      :phonics_as="phonics_as"
+      :phonics_ks="phonics_ks"/>
     </q-page-container>
   </q-layout>
 </template>
@@ -56,7 +60,43 @@ export default defineComponent({
       leftDrawerOpen,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
-      }
+      },
+      phonics_a: ref([
+        'a', 'i', 'u', 'e', 'o'
+      ]),
+      phonics_song: ref([
+        'A', 'ka', 'sa', 'ta', 'na', 'Ha', 'ma', 'ya', 'la', 'wa'
+      ]),
+      phonics_as: ref([
+        'あ', 'い', 'う', 'え', 'お'
+      ]),
+      phonics_ks: ref([
+        'か', 'き', 'く', 'け', 'こ'
+      ]),
+      phonics_ss: ref([
+        'さ', 'し', 'す', 'せ', 'そ'
+      ]),
+      phonics_ts: ref([
+        'た', 'ち', 'つ', 'て', 'と'
+      ]),
+      phonics_ns: ref([
+        'な', 'に', 'ぬ', 'ね', 'の'
+      ]),
+      phonics_hs: ref([
+        'は', 'ひ', 'ふ', 'へ', 'ほ'
+      ]),
+      phonics_ms: ref([
+        'ま', 'み', 'む', 'め', 'も'
+      ]),
+      phonics_ys: ref([
+        'や', 'ゆ', 'よ'
+      ]),
+      phonics_ls: ref([
+        'ら', 'り', 'る', 'れ', 'ろ'
+      ]),
+      phonics_ws: ref([
+        'わ', 'を', 'ん'
+      ]),
     }
   }
 });
