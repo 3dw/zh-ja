@@ -2,7 +2,7 @@
   "name": "zh-ja",
   "version": "0.0.1",
   "description": "an open source learning material for Zh-TW users to learna Ja",
-  "productName": "Learna Ja with Zh-TW",
+  "productName": "Learn Ja with Zh-TW",
   "author": "Bestian Tang <bestian@gmail.com>",
   "private": true,
   "scripts": {
@@ -16,6 +16,7 @@
     "@quasar/extras": "^1.16.4",
     "axios": "^1.2.1",
     "edu-lang": "^0.3.1",
+    "pug": "^3.0.2",
     "quasar": "^2.6.0",
     "vue": "^3.0.0",
     "vue-i18n": "^9.2.2",
