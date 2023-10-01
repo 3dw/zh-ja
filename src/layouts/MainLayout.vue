@@ -1,48 +1,19 @@
-<template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
+<template lang="pug">
+q-layout(view="lHh Lpr lFf")
+  q-header(elevated)
+    q-toolbar
+      q-btn(flat, dense, round, icon="menu", aria-label="Menu", @click="toggleLeftDrawer")
+      q-toolbar-title 自主學日文
+      div
+        a(href="https://github.com/3dw/zh-ja/", target="_blank", rel="noopener noreferrer")
+          q-icon(name="palette")
+          | 開放的教材教法 - 共筆研發中
+  q-drawer(v-model="leftDrawerOpen", show-if-above, bordered)
+    q-list
+      q-item-label(header) 學習資源
+  q-page-container
+    router-view(:phonics_a="phonics_a", :phonics_song="phonics_song", :phonics_as="phonics_as", :phonics_ks="phonics_ks", :phonics_ss="phonics_ss")
 
-        <q-toolbar-title>
-          自主學日文
-        </q-toolbar-title>
-
-        <div>開放的教材教法</div>
-      </q-toolbar>
-    </q-header>
-
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
-      <q-list>
-        <q-item-label
-          header
-        >
-          學習資源
-        </q-item-label>
-
-      </q-list>
-    </q-drawer>
-
-    <q-page-container>
-      <router-view 
-      :phonics_a="phonics_a"
-      :phonics_song="phonics_song"
-      :phonics_as="phonics_as"
-      :phonics_ks="phonics_ks"
-      :phonics_ss="phonics_ss"/>
-    </q-page-container>
-  </q-layout>
 </template>
 
 <script lang="ts">
