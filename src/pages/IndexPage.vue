@@ -9,11 +9,18 @@ q-page.row.items-center.justify-evenly
     tr
       td a
       td(v-for="(p, idx) in phonics_as" :key="p")
-        q-btn(@click="play(p, phonics_a, '', idx)", :label="getLabel(phonics_a, p, '', idx)")
+        q-btn(round, size="xl", @click="play(p, phonics_a, '', idx)",
+         :label="getLabel(phonics_a, p, '', idx)")
     tr
       td ka
       td(v-for="(p, idx) in phonics_ks" :key="p")
-        q-btn(@click="play(p, phonics_a, 'k', idx)", :label="getLabel(phonics_a, p, 'k', idx)")
+        q-btn(round, size="xl", @click="play(p, phonics_a, 'k', idx)",
+         :label="getLabel(phonics_a, p, 'k', idx)")
+    tr
+      td sa
+      td(v-for="(p, idx) in phonics_ss" :key="p")
+        q-btn(round, size="xl", @click="play(p, phonics_a, 's', idx)",
+         :label="getLabel(phonics_a, p, 's', idx)")
 
 </template>
 
@@ -23,7 +30,7 @@ import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'IndexPage',
-  props: ['phonics_a', 'phonics_song', 'phonics_as', 'phonics_ks'],
+  props: ['phonics_a', 'phonics_song', 'phonics_as', 'phonics_ks', 'phonics_ss'],
   components: { ExampleComponent },
   setup () {
     return {
@@ -43,6 +50,9 @@ export default defineComponent({
         return this.getPhonics(hiragana)
       } else {
         let tail = phonics_a[idx]
+        if (head === 's' && tail === 'i') {
+          head = 'sh'
+        }
         console.log(tail)
         return head + tail
       }

@@ -39,7 +39,8 @@
       :phonics_a="phonics_a"
       :phonics_song="phonics_song"
       :phonics_as="phonics_as"
-      :phonics_ks="phonics_ks"/>
+      :phonics_ks="phonics_ks"
+      :phonics_ss="phonics_ss"/>
     </q-page-container>
   </q-layout>
 </template>
