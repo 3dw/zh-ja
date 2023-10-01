@@ -1,0 +1,40 @@
+
+/* Tablet and Phone */
+@media screen and (max-width: 831px) {
+
+  .flex-rwd {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .fater-only {
+    display: none !important;
+  }
+
+  .fat-only {
+    display: none !important;
+  }
+}
+
+/* Tablet Only */
+@media screen and (min-width: 432px) and (max-width: 1031px) {
+  .thiner-only {
+    display: none !important;
+  }
+  .fater-only {
+    display: none !important;
+  }
+  .flex-rwd {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+/* Phone Only */
+@media screen and (max-width: 431px) {
+  .med-only {
+    display: none !important;
+  }
+}

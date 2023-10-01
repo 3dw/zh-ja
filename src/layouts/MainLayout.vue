@@ -7,7 +7,8 @@ q-layout(view="lHh Lpr lFf")
       div
         a(href="https://github.com/3dw/zh-ja/", target="_blank", rel="noopener noreferrer")
           q-icon(name="palette")
-          | 開放的教材教法 - 共筆研發中
+          span.thin-only 開放的教材教法 - 
+          span 共筆研發中
   q-drawer(v-model="leftDrawerOpen", show-if-above, bordered)
     q-list
       q-item-label(header) 學習資源

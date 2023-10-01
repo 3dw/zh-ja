@@ -1,0 +1,17 @@
+.print-only {
+  visibility: hidden;
+  opacity: 0;
+}
+
+
+/* Printer */
+@media print {
+  .print-break {
+    page-break-after: always
+  }
+  
+  .print-only {
+    visibility: visible;
+    opacity: 1;
+  }
+}

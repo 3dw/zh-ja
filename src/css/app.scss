@@ -6,10 +6,17 @@ th, td {
 }
 
 
-a {
+a, button {
+    cursor: pointer !important;
     text-decoration: none;
+    font-size: 18px;
 }
 
 a:visited {
+
     color: rgb(255, 255, 255);
+}
+
+.flex {
+    display: flex;
 }
