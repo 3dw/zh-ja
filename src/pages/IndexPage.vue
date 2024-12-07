@@ -60,20 +60,15 @@ export default defineComponent({
         return head + tail
       }
     },
-    play (hiragana:string,  phonics: string, p:string, idx: number) {
-      const isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
-      const isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === '[object SafariRemoteNotification]'; })(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
-
+    play (hiragana:string, phonics: string, p:string, idx: number) {
       this.currentPhonics = hiragana
-
-      console.log(`playing: ${p}${phonics[idx]}`)
-      if (isOpera || isSafari) {
-        const audio = new Audio(`/phonics/${p}${phonics[idx]}.ogg`);
-        audio.play();
-      } else {
-        const audio = new Audio(`/phonics/${p}${phonics[idx]}.mp3`);
-        audio.play();
-      }
+      
+      const text = p + phonics[idx]
+      const utterance = new SpeechSynthesisUtterance(text)
+      utterance.lang = 'ja-JP'
+      utterance.rate = 0.8 // 調整速度，可以根據需要修改
+      
+      window.speechSynthesis.speak(utterance)
     }
   }
 });
